@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/about.css">
+</head>
+
+<body>
+
+    <table align=center width=1200 cellpadding=3 cellspacing=0 style="word-break:break-all">
+
+        <tr>
+            <td>
+
+                <div id="tb">
+                    <img src="./tp/2.jfif" >哈喽哈喽
+                    <a href="about.html">关于我们</a>
+                    <a href="news.html">新闻</a>
+                    <a href="index.html">首页</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table align=center width=1200 cellpadding=3 cellspacing=0 style="word-break:break-all">
+
+        <tr>
+            <td>
+
+                <div id="aboutmap"></div>
+                <div class="content">
+                        <div style="display: inline-block;padding-left: 50px;width: 540px;height: 300px;margin-bottom: 50px;">
+                            <p style="margin: 0 0 30px 0;">人生路，靠不得任何人，只能靠自己。那些该吃的苦，一点都不能少，那是我们通向未来必须要走的路，从泥泞不堪，布满荆棘的小道上迈步，才能踏上铺满鲜花的大道。</p>
+                            <img src="./tp/1.png" alt="" class="img-logo" style="float: left; width: 50px;">
+                            <p style="padding:10px 50px;">福建省福州市闽侯县闽江学院</p>
+                            <br>
+                            <img src="./tp/1.png" alt="" class="img-logo" style="float: left;width: 50px;">
+                            <p style="padding:10px 50px;">12326565956@qq.com</p>
+                            <br>
+                            <img src="./tp/1.png" alt="" class="img-logo" style="float: left;width: 50px;">
+                            <p style="padding:10px 50px;">13546586955</p>
+                        </div>
+                </div>
+                <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        function addmap() {
+                            // 百度地图API功能
+                            var map = new BMap.Map("aboutmap");    // 创建Map实例
+                            var point = new BMap.Point(119.172522, 26.069421);
+                            map.centerAndZoom(point, 15);// 初始化地图,设置中心点坐标和地图级别
+                            var marker = new BMap.Marker(point);  // 创建标注
+                            map.addOverlay(marker);               // 将标注添加到地图中 
+                            //添加地图类型控件
+                            map.addControl(new BMap.MapTypeControl({
+                                mapTypes: [
+                                    BMAP_NORMAL_MAP,
+                                    BMAP_HYBRID_MAP
+                                ]
+                            }));
+                            map.setCurrentCity("福州");          // 设置地图显示的城市 此项是必须设置的
+                            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+                            var top_left_control = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_TOP_LEFT });// 左上角，添加比例尺
+                            var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+                            var top_right_navigation = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL }); //右上角，仅包含平移和缩放按钮
+                            /*缩放控件type有四种类型:
+                            BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+
+                            //添加控件和比例尺
+                            map.addControl(top_left_control);
+                            map.addControl(top_left_navigation);
+                            map.addControl(top_right_navigation);
+                        }
+                        addmap();
+                    });
+                </script>
+
+                <script type="text/javascript">
+                    window.HOST_TYPE = '2'
+                </script>
+                <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=Et4svEgiKqSOqbsjGZLgoZGp3kaim6Nz"></script>
+
+
+                <div class="db">
+                    <div>
+                        <div id="dbimg">
+                            <div id="a1">
+                                <img src="tp/1.png" alt="">
+                                <p>地图</p>
+                            </div>
+                            <div id="a1">
+                                <img src="tp/1.png" alt="">
+                                <p>邮件</p>
+                            </div>
+                            <div id="a1">
+                                <img src="tp/1.png" alt="">
+                                <p>客服</p>
+                            </div>
+
+                        </div>
+
+                        <div >
+                            <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3583662750,3244795741&fm=26&gp=0.jpg" alt="">
+                            
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1>妈咪妈咪哄</h1>
+                    </div>
+
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
